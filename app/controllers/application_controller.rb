@@ -16,7 +16,8 @@ class ApplicationController < ActionController::Base
       render text: reloader + "This is nice"
     end
     if random_int == 2
-      render text: reloader + "<br /><br /> wooooowie!"
+      weird_string = ('a'..'z').to_a.shuffle[0..7].join
+      render text: reloader + weird_string + "<br /><br /> wooooowie!"
     end
     if random_int == 3
       render text: reloader + "Or this maybe..."
